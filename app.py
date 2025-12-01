@@ -179,17 +179,29 @@ async def home():
       .sidebar h4{font-size:13px;margin-top:6px}
       #users{list-style:none;margin-top:4px;font-size:12px;max-height:200px;overflow:auto}
       #users li{padding:3px 5px;border-radius:6px;background:rgba(0,0,0,.25);margin-bottom:2px}
-      .chat{display:flex;flex-direction:column;background:var(--brown-bg);}
+      .chat {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+/* Biar bagian chat messages scroll sendiri */
+.messages {
+  flex: 1 !important;
+  overflow-y: auto !important;
+  padding-bottom: 5px;
+}
+/* Biar input bar nempel di bawah */
+.bottom {
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+}
       .chat-header{
         padding:10px 14px;background:linear-gradient(90deg,#5b4636,#7b5a40);
         color:#fff;display:flex;justify-content:space-between;align-items:center;font-size:13px;
       }
       .status-dot{width:10px;height:10px;border-radius:999px;background:#999;box-shadow:0 0 8px #999;}
       .status-dot.online{background:#4ade80;box-shadow:0 0 10px #4ade80;}
-      .messages{
-        flex:1;overflow:auto;padding:10px;
-        background:repeating-linear-gradient(135deg,#f7ebdc,#f7ebdc 18px,#f3e2cf 18px,#f3e2cf 36px);
-      }
       .msg-row{margin-bottom:8px;max-width:70%;}
       .msg-row.me{margin-left:auto;text-align:right;}
       .msg-row.other{margin-right:auto;text-align:left;}
